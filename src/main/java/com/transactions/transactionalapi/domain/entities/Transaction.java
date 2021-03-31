@@ -39,23 +39,23 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public boolean isValidPositiveAmount(OperationTypes operationType, BigDecimal amount) {
+    public static boolean isValidPositiveAmount(OperationTypes operationType, BigDecimal amount) {
         return operationsWithPositiveAmount().contains(operationType) &&
                 amount.compareTo(BigDecimal.ZERO) > 0;
     }
 
-    public boolean isValidNegativeAmount(OperationTypes operationType, BigDecimal amount) {
+    public static boolean isValidNegativeAmount(OperationTypes operationType, BigDecimal amount) {
         return operationsWithNegativeAmount().contains(operationType) &&
                 amount.compareTo(BigDecimal.ZERO) < 0;
     }
 
-    public List<OperationTypes> operationsWithPositiveAmount() {
+    public static List<OperationTypes> operationsWithPositiveAmount() {
         return new ArrayList<>() {{
             add(OperationTypes.Payment);
         }};
     }
 
-    public List<OperationTypes> operationsWithNegativeAmount() {
+    public static List<OperationTypes> operationsWithNegativeAmount() {
         return new ArrayList<OperationTypes>(){{
             add(OperationTypes.CashPurchase);
             add(OperationTypes.InstallmentPurchase);
