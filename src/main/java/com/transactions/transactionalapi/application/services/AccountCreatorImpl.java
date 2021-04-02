@@ -1,6 +1,6 @@
 package com.transactions.transactionalapi.application.services;
 
-import com.transactions.transactionalapi.application.models.AccountCreatedModel;
+import com.transactions.transactionalapi.application.models.CreatedAccountModel;
 import com.transactions.transactionalapi.application.models.CreateAccountModel;
 import com.transactions.transactionalapi.domain.entities.Account;
 import com.transactions.transactionalapi.domain.repositories.AccountWriter;
@@ -20,12 +20,12 @@ public class AccountCreatorImpl implements AccountCreator {
     }
 
     @Override
-    public Optional<AccountCreatedModel> create(CreateAccountModel accountModel) {
+    public Optional<CreatedAccountModel> create(CreateAccountModel accountModel) {
         var account = new Account(accountModel.getDocumentNumber());
 
         var newAccount = accountWriter.create(account);
 
-        return Optional.of(new AccountCreatedModel(
+        return Optional.of(new CreatedAccountModel(
                 newAccount.getId(),
                 newAccount.getCreatedAt(),
                 newAccount.getDocumentNumber()));

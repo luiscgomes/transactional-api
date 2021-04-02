@@ -22,7 +22,7 @@ public class AccountWriterImpl implements AccountWriter {
 
     @Override
     public Account create(Account account) {
-        var accountDto = new AccountDto(account.getCreatedAt(), account.getDocumentNumber());
+        var accountDto = new AccountDto(account.getId(), account.getCreatedAt(), account.getDocumentNumber());
 
         var newAccount = accountJpaRepository.save(accountDto);
 
