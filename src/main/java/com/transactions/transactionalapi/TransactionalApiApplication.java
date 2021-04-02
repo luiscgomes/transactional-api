@@ -2,8 +2,15 @@ package com.transactions.transactionalapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan({
+		"com.transactions.transactionalapi.domain",
+		"com.transactions.transactionalapi.infrastructure",
+		"com.transactions.transactionalapi.application",
+		"com.transactions.transactionalapi.api"
+})
 public class TransactionalApiApplication {
 
 	public static void main(String[] args) {
