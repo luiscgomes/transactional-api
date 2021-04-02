@@ -28,6 +28,6 @@ public class AccountCreatorImpl implements AccountCreator {
         return Optional.of(new CreatedAccountModel(
                 newAccount.getId(),
                 newAccount.getCreatedAt(),
-                newAccount.getDocumentNumber()));
+                newAccount.getDocumentNumber().getNumber()));
     }
 }

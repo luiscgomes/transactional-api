@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.util.UUID;
 
 @RestController
@@ -31,7 +32,7 @@ public class AccountController {
     public ResponseEntity<?> oneById(@PathVariable UUID accountId) {
         var account = accountReader
                 .one(accountId)
-                .map(acc -> new CreatedAccountModel(acc.getId(), acc.getCreatedAt(), acc.getDocumentNumber()));
+                .map(acc -> new CreatedAccountModel(acc.getId(), acc.getCreatedAt(), acc.getDocumentNumber().getNumber()));
 
         if (account.isPresent() == false)
             return ResponseEntity.notFound().build();
@@ -40,7 +41,7 @@ public class AccountController {
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody CreateAccountModel createAccountModel, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<?> create(@Valid @RequestBody CreateAccountModel createAccountModel, UriComponentsBuilder uriBuilder) {
         var createdAccount = accountCreator.create(createAccountModel).get();
 
         var uri = uriBuilder
