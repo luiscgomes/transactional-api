@@ -1,4 +1,4 @@
-package com.transactions.transactionalapi.application.services;
+package com.transactions.transactionalapi.application.services.accountCreators;
 
 import com.transactions.transactionalapi.application.models.CommandResult;
 import com.transactions.transactionalapi.application.models.CreatedAccountModel;

@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Repository
 public class AccountReaderImpl implements AccountReader {
-    private AccountJpaRepository accountJpaRepository;
+    private final AccountJpaRepository accountJpaRepository;
 
     public AccountReaderImpl(AccountJpaRepository accountJpaRepository) {
         if (accountJpaRepository == null)

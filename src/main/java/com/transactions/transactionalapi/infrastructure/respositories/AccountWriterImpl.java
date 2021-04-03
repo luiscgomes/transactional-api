@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class AccountWriterImpl implements AccountWriter {
-    private AccountJpaRepository accountJpaRepository;
+    private final AccountJpaRepository accountJpaRepository;
 
     public AccountWriterImpl(AccountJpaRepository accountJpaRepository) {
         if (accountJpaRepository == null)

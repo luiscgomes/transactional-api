@@ -1,4 +1,4 @@
-package com.transactions.transactionalapi.application.services;
+package com.transactions.transactionalapi.application.services.accountCreators;
 
 import com.transactions.transactionalapi.application.models.CommandResult;
 import com.transactions.transactionalapi.application.models.CreateAccountModel;
@@ -13,9 +13,9 @@ import org.springframework.stereotype.Service;
 @Service
 @Qualifier("accountCreatorImplWithErrorHandler")
 public class AccountCreatorImplWithErrorHandler implements AccountCreator {
-    private AccountCreator accountCreator;
+    private final AccountCreator accountCreator;
 
-    private Logger logger;
+    private final Logger logger;
 
     public AccountCreatorImplWithErrorHandler(
             @Qualifier("accountCreateWithDocumentNumberAlreadyExits") AccountCreator accountCreator) {

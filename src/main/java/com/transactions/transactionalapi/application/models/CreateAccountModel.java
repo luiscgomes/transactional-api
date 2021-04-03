@@ -18,6 +18,6 @@ public class CreateAccountModel {
     @JsonProperty("document_number")
     @NotBlank(message = "Document number is required")
     @Size(min = 11, max = 14, message = "Document number min length is 11 and max length is 14")
-    @DocumentNumberConstraint(message = "Document number must be a valid CPF or CNPJ")
+    @DocumentNumberConstraint
     private String documentNumber;
 }

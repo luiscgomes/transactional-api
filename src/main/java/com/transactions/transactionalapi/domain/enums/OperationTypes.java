@@ -1,5 +1,7 @@
 package com.transactions.transactionalapi.domain.enums;
 
+import java.util.Arrays;
+
 public enum OperationTypes {
     CashPurchase(1),
     InstallmentPurchase(2),
@@ -12,7 +14,11 @@ public enum OperationTypes {
         this.operationType = operationType;
     }
 
-    public int getOperationType() {
+    public int getOperationTypeId() {
         return this.operationType;
+    }
+
+    public static OperationTypes getOperationTypeValue(int operationTypeId) {
+        return Arrays.stream(OperationTypes.values()).filter(ot -> ot.getOperationTypeId() == operationTypeId).findFirst().get();
     }
 }

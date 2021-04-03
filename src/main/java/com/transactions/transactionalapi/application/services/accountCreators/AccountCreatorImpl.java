@@ -1,4 +1,4 @@
-package com.transactions.transactionalapi.application.services;
+package com.transactions.transactionalapi.application.services.accountCreators;
 
 import com.transactions.transactionalapi.application.models.CommandResult;
 import com.transactions.transactionalapi.application.models.CreatedAccountModel;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Qualifier("accountCreatorBase")
 public class AccountCreatorImpl implements AccountCreator {
-    private AccountWriter accountWriter;
+    private final AccountWriter accountWriter;
 
     public AccountCreatorImpl(AccountWriter accountWriter) {
         if (accountWriter == null)

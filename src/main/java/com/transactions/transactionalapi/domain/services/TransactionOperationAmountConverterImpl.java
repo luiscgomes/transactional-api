@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 @Service
 public class TransactionOperationAmountConverterImpl implements TransactionOperationAmountConverter {
     @Override
-    public BigDecimal Convert(BigDecimal amount, OperationTypes operationType) {
+    public BigDecimal convert(BigDecimal amount, OperationTypes operationType) {
         if (Transaction.operationsWithNegativeAmount().contains(operationType))
             return amount.negate();
 

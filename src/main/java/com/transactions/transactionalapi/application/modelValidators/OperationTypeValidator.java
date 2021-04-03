@@ -15,6 +15,6 @@ public class OperationTypeValidator implements ConstraintValidator<OperationType
     public boolean isValid(Integer operationType, ConstraintValidatorContext constraintValidatorContext) {
         return Arrays
                 .stream(OperationTypes.values())
-                .anyMatch(ot -> ot.getOperationType() == operationType);
+                .anyMatch(ot -> ot.getOperationTypeId() == operationType);
     }
 }

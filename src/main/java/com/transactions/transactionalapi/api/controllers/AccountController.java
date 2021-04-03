@@ -2,7 +2,7 @@ package com.transactions.transactionalapi.api.controllers;
 
 import com.transactions.transactionalapi.application.models.CreateAccountModel;
 import com.transactions.transactionalapi.application.models.CreatedAccountModel;
-import com.transactions.transactionalapi.application.services.AccountCreator;
+import com.transactions.transactionalapi.application.services.accountCreators.AccountCreator;
 import com.transactions.transactionalapi.domain.repositories.AccountReader;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,8 +14,9 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/accounts")
 public class AccountController {
-    private AccountCreator accountCreator;
-    private AccountReader accountReader;
+    private final AccountCreator accountCreator;
+
+    private final AccountReader accountReader;
 
     public AccountController(AccountCreator accountCreator, AccountReader accountReader) {
         if (accountCreator == null)
@@ -34,7 +35,7 @@ public class AccountController {
                 .one(accountId)
                 .map(acc -> new CreatedAccountModel(acc.getId(), acc.getCreatedAt(), acc.getDocumentNumber().getNumber()));
 
-        if (account.isPresent() == false)
+        if (account.isEmpty())
             return ResponseEntity.notFound().build();
 
         return ResponseEntity.ok(account);

@@ -14,7 +14,6 @@ import java.util.Map;
 
 @ControllerAdvice
 public class MethodArgumentNotValidExceptionHandler {
-
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseBody

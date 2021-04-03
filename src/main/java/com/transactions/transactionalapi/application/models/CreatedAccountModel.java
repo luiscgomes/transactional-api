@@ -10,11 +10,11 @@ import java.util.UUID;
 @AllArgsConstructor
 public class CreatedAccountModel {
     @JsonProperty("account_id")
-    @Getter private UUID id;
+    @Getter private final UUID id;
 
     @JsonProperty("created_at")
-    @Getter private LocalDateTime createdAt;
+    @Getter private final LocalDateTime createdAt;
 
     @JsonProperty("document_number")
-    @Getter private String documentNumber;
+    @Getter private final String documentNumber;
 }

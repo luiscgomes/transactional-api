@@ -1,4 +1,4 @@
-package com.transactions.transactionalapi.application.services;
+package com.transactions.transactionalapi.application.services.accountCreators;
 
 import com.transactions.transactionalapi.application.models.CommandResult;
 import com.transactions.transactionalapi.application.models.CreateAccountModel;
@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 @Service
 @Qualifier("accountCreateWithDocumentNumberAlreadyExits")
 public class AccountCreatorImplWithDocumentNumberAlreadyExits implements AccountCreator {
-    private AccountCreator accountCreator;
+    private final AccountCreator accountCreator;
 
-    private AccountReader accountReader;
+    private final AccountReader accountReader;
 
     public AccountCreatorImplWithDocumentNumberAlreadyExits(
             @Qualifier("accountCreatorBase") AccountCreator accountCreator,
