@@ -42,7 +42,12 @@ public class AccountController {
 
     @PostMapping
     public ResponseEntity<?> create(@Valid @RequestBody CreateAccountModel createAccountModel, UriComponentsBuilder uriBuilder) {
-        var createdAccount = accountCreator.create(createAccountModel).get();
+        var result = accountCreator.create(createAccountModel);
+
+        if (result.hasError())
+            return ResponseEntity.badRequest().body(result.getErrors());
+
+        var createdAccount = result.getValue().get();
 
         var uri = uriBuilder
                 .path("/accounts/{accountId}")

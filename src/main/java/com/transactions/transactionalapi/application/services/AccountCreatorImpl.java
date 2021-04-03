@@ -1,14 +1,18 @@
 package com.transactions.transactionalapi.application.services;
 
+import com.transactions.transactionalapi.application.models.CommandResult;
 import com.transactions.transactionalapi.application.models.CreatedAccountModel;
 import com.transactions.transactionalapi.application.models.CreateAccountModel;
 import com.transactions.transactionalapi.domain.entities.Account;
 import com.transactions.transactionalapi.domain.repositories.AccountWriter;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.querydsl.binding.QuerydslPredicate;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
+@Qualifier("accountCreatorBase")
 public class AccountCreatorImpl implements AccountCreator {
     private AccountWriter accountWriter;
 
@@ -20,12 +24,12 @@ public class AccountCreatorImpl implements AccountCreator {
     }
 
     @Override
-    public Optional<CreatedAccountModel> create(CreateAccountModel accountModel) {
+    public CommandResult<CreatedAccountModel> create(CreateAccountModel accountModel) {
         var account = new Account(accountModel.getDocumentNumber());
 
         var newAccount = accountWriter.create(account);
 
-        return Optional.of(new CreatedAccountModel(
+        return new CommandResult<>(new CreatedAccountModel(
                 newAccount.getId(),
                 newAccount.getCreatedAt(),
                 newAccount.getDocumentNumber().getNumber()));

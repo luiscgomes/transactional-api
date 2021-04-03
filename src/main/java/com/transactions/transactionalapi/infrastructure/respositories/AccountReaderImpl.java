@@ -28,4 +28,14 @@ public class AccountReaderImpl implements AccountReader {
                         accountDto.getCreatedAt()));
 
     }
+
+    @Override
+    public Optional<Account> oneByDocumentNumber(String documentNumber) {
+        return accountJpaRepository
+                .findByDocumentNumber(documentNumber)
+                .map(accountDto -> new Account(
+                        accountDto.getId(),
+                        accountDto.getDocumentNumber(),
+                        accountDto.getCreatedAt()));
+    }
 }

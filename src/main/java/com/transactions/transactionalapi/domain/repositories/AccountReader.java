@@ -7,4 +7,6 @@ import java.util.UUID;
 
 public interface AccountReader {
     Optional<Account> one(UUID accountId);
+
+    Optional<Account> oneByDocumentNumber(String documentNumber);
 }
