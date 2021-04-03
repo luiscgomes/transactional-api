@@ -5,12 +5,10 @@ import com.transactions.transactionalapi.application.models.CreateTransactionMod
 import com.transactions.transactionalapi.application.models.CreatedTransactionModel;
 import com.transactions.transactionalapi.domain.repositories.AccountReader;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-@Primary
 @Service
-@Qualifier("TransactionCreatorImplWithAccountExistsValidation")
+@Qualifier("transactionCreatorImplWithAccountExistsValidation")
 public class TransactionCreatorImplWithAccountExistsValidation implements TransactionCreator {
     private final TransactionCreator transactionCreator;
 

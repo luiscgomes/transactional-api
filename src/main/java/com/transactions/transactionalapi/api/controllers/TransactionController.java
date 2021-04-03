@@ -1,15 +1,14 @@
 package com.transactions.transactionalapi.api.controllers;
 
 import com.transactions.transactionalapi.application.models.CreateTransactionModel;
+import com.transactions.transactionalapi.application.models.CreatedAccountModel;
 import com.transactions.transactionalapi.application.services.transactionCreators.TransactionCreator;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/transactions")
@@ -33,7 +32,7 @@ public class TransactionController {
         var createdTransaction = result.getValue().get();
 
         var uri = uriBuilder
-                .path("/transactions/{transactionId}")
+                .path("")
                 .buildAndExpand(createdTransaction.getId())
                 .toUri();
 
