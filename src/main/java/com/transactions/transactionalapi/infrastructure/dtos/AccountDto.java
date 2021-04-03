@@ -9,18 +9,18 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "Accounts")
+@Table(name = "accounts")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class AccountDto {
     @Id
-    @Column(name = "AccountId")
+    @Column(name = "account_id")
     private UUID id;
 
-    @Column(name = "CreatedAt")
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @Column(name = "DocumentNumber")
+    @Column(name = "document_number")
     private String documentNumber;
 }
