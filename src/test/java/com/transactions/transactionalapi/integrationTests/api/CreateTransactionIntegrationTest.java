@@ -1,12 +1,10 @@
 package com.transactions.transactionalapi.integrationTests.api;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.jsonpath.JsonPath;
 import com.transactions.transactionalapi.application.models.CreateTransactionModel;
 import com.transactions.transactionalapi.domain.entities.Account;
 import com.transactions.transactionalapi.domain.enums.OperationTypes;
-import com.transactions.transactionalapi.domain.repositories.AccountReader;
 import com.transactions.transactionalapi.domain.repositories.AccountWriter;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -26,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-class CreateTransactionIntegrationTests {
+class CreateTransactionIntegrationTest {
     @Autowired
     private MockMvc mockMvc;
 

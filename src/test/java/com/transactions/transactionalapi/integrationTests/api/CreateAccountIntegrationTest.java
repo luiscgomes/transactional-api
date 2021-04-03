@@ -1,13 +1,11 @@
 package com.transactions.transactionalapi.integrationTests.api;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.jsonpath.JsonPath;
 import com.transactions.transactionalapi.application.models.CreateAccountModel;
 import com.transactions.transactionalapi.domain.entities.Account;
 import com.transactions.transactionalapi.domain.repositories.AccountReader;
 import com.transactions.transactionalapi.domain.repositories.AccountWriter;
-import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-class CreateAccountIntegrationTests {
+class CreateAccountIntegrationTest {
     @Autowired
     private MockMvc mockMvc;
 
@@ -64,7 +62,7 @@ class CreateAccountIntegrationTests {
 
     @Test
     void shouldReturnUnprocessableEntityWhenThereIsAlreadyAccountWithDocumentNumber() throws Exception {
-        var documentNumber = "57920370000164";
+        var documentNumber = "07187540000175";
         var account = new Account(documentNumber);
 
         accountWriter.create(account);
