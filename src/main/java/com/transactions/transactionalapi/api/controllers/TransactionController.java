@@ -1,14 +1,12 @@
 package com.transactions.transactionalapi.api.controllers;
 
 import com.transactions.transactionalapi.application.models.CreateTransactionModel;
-import com.transactions.transactionalapi.application.models.CreatedAccountModel;
 import com.transactions.transactionalapi.application.services.transactionCreators.TransactionCreator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/transactions")
@@ -27,7 +25,7 @@ public class TransactionController {
         var result = transactionCreator.create(transactionModel);
 
         if (result.hasError())
-            return ResponseEntity.badRequest().body(result.getErrors());
+            return ResponseEntity.unprocessableEntity().body(result.getErrors());
 
         var createdTransaction = result.getValue().get();
 

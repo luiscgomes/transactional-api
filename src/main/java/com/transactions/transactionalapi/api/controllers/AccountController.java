@@ -46,7 +46,7 @@ public class AccountController {
         var result = accountCreator.create(createAccountModel);
 
         if (result.hasError())
-            return ResponseEntity.badRequest().body(result.getErrors());
+            return ResponseEntity.unprocessableEntity().body(result.getErrors());
 
         var createdAccount = result.getValue().get();
 
