@@ -6,10 +6,7 @@ import com.transactions.transactionalapi.application.models.CreateAccountModel;
 import com.transactions.transactionalapi.domain.entities.Account;
 import com.transactions.transactionalapi.domain.repositories.AccountWriter;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.querydsl.binding.QuerydslPredicate;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @Qualifier("accountCreatorBase")

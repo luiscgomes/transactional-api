@@ -5,21 +5,18 @@ import com.transactions.transactionalapi.application.models.CreateAccountModel;
 import com.transactions.transactionalapi.application.models.CreatedAccountModel;
 import com.transactions.transactionalapi.domain.repositories.AccountReader;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
-@Qualifier("accountCreateWithDocumentNumberAlreadyExits")
 @Service
-@Primary
+@Qualifier("accountCreateWithDocumentNumberAlreadyExits")
 public class AccountCreatorImplWithDocumentNumberAlreadyExits implements AccountCreator {
-    @Qualifier("accountCreatorBase")
     private AccountCreator accountCreator;
 
     private AccountReader accountReader;
 
-    public AccountCreatorImplWithDocumentNumberAlreadyExits(AccountCreator accountCreator, AccountReader accountReader) {
+    public AccountCreatorImplWithDocumentNumberAlreadyExits(
+            @Qualifier("accountCreatorBase") AccountCreator accountCreator,
+            AccountReader accountReader) {
         if (accountCreator == null)
             throw new IllegalArgumentException("accountCreator must not be null");
 
