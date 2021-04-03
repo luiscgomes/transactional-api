@@ -44,7 +44,7 @@ class CreateAccountIntegrationTests {
         var createAccountModel = new CreateAccountModel("57920370000164");
         final UUID[] accountId = new UUID[1];
 
-        mockMvc.perform(post("/accounts", 42L)
+        mockMvc.perform(post("/accounts")
                 .contentType("application/json")
                 .content(objectMapper.writeValueAsString(createAccountModel)))
                 .andExpect(status().isCreated())
@@ -69,7 +69,7 @@ class CreateAccountIntegrationTests {
 
         var createAccountModel = new CreateAccountModel(documentNumber);
 
-        mockMvc.perform(post("/accounts", 42L)
+        mockMvc.perform(post("/accounts")
                 .contentType("application/json")
                 .content(objectMapper.writeValueAsString(createAccountModel)))
                 .andExpect(status().isUnprocessableEntity())
