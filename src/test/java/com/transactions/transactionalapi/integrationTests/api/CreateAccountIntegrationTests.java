@@ -51,9 +51,11 @@ class CreateAccountIntegrationTests {
                 .andDo(result -> {
                     var body = result.getResponse().getContentAsString();
                     var documentNumber = JsonPath.parse(body).read("document_number").toString();
+                    var createdAt = JsonPath.parse(body).read("created_at").toString();
                     accountId[0] = UUID.fromString(JsonPath.parse(body).read("account_id").toString());
 
                     assertThat(documentNumber).isEqualTo(createAccountModel.getDocumentNumber());
+                    assertThat(createdAt).isNotBlank();
                 });
 
         var account = accountReader.one(accountId[0]);
