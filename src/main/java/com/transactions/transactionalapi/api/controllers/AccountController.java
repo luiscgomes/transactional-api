@@ -38,7 +38,7 @@ public class AccountController {
         if (account.isEmpty())
             return ResponseEntity.notFound().build();
 
-        return ResponseEntity.ok(account);
+        return ResponseEntity.ok(account.get());
     }
 
     @PostMapping
