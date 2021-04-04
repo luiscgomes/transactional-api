@@ -1,4 +1,4 @@
-package com.transactions.transactionalapi.unitTests.application.transactionCreators;
+package com.transactions.transactionalapi.unitTests.application.services.transactionCreators;
 
 import com.transactions.transactionalapi.application.models.CreateTransactionModel;
 import com.transactions.transactionalapi.application.services.transactionCreators.TransactionCreator;

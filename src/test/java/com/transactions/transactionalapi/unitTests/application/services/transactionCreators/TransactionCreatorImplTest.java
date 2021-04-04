@@ -1,9 +1,6 @@
-package com.transactions.transactionalapi.unitTests.application.transactionCreators;
+package com.transactions.transactionalapi.unitTests.application.services.transactionCreators;
 
-import com.transactions.transactionalapi.api.controllers.AccountController;
 import com.transactions.transactionalapi.application.models.CreateTransactionModel;
-import com.transactions.transactionalapi.application.models.CreatedTransactionModel;
-import com.transactions.transactionalapi.application.services.transactionCreators.TransactionCreator;
 import com.transactions.transactionalapi.application.services.transactionCreators.TransactionCreatorImpl;
 import com.transactions.transactionalapi.domain.entities.Account;
 import com.transactions.transactionalapi.domain.entities.Transaction;
@@ -14,7 +11,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;

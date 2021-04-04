@@ -1,4 +1,4 @@
-package com.transactions.transactionalapi.unitTests.application.transactionCreators;
+package com.transactions.transactionalapi.unitTests.application.services.transactionCreators;
 
 import com.transactions.transactionalapi.application.models.CommandResult;
 import com.transactions.transactionalapi.application.models.CreateTransactionModel;
@@ -9,7 +9,6 @@ import com.transactions.transactionalapi.domain.enums.OperationTypes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;

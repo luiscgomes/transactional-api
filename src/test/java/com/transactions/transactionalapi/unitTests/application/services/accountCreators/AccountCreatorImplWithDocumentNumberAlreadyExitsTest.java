@@ -1,4 +1,4 @@
-package com.transactions.transactionalapi.unitTests.application.accountCreators;
+package com.transactions.transactionalapi.unitTests.application.services.accountCreators;
 
 import com.transactions.transactionalapi.application.models.CreateAccountModel;
 import com.transactions.transactionalapi.application.services.accountCreators.AccountCreator;
