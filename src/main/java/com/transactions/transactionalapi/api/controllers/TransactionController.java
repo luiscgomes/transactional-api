@@ -27,7 +27,7 @@ public class TransactionController {
         var result = transactionCreator.create(transactionModel);
 
         if (result.hasError())
-            return ResponseEntity.badRequest().body(result.getErrors());
+            return ResponseEntity.unprocessableEntity().body(result.getErrors());
 
         var createdTransaction = result.getValue().get();
 

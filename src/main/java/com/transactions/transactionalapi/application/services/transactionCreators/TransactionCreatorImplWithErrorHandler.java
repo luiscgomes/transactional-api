@@ -19,12 +19,16 @@ public class TransactionCreatorImplWithErrorHandler implements TransactionCreato
     private final Logger logger;
 
     public TransactionCreatorImplWithErrorHandler(
-            @Qualifier("transactionCreatorImplWithAccountExistsValidation") TransactionCreator transactionCreator) {
+            @Qualifier("transactionCreatorImplWithAccountExistsValidation") TransactionCreator transactionCreator,
+            Logger logger) {
         if (transactionCreator == null)
             throw new IllegalArgumentException("transactionCreator must not be null");
 
+        if (logger == null)
+            throw new IllegalArgumentException("logger must not be null");
+
         this.transactionCreator = transactionCreator;
-        logger = LoggerFactory.getLogger(AccountCreatorImplWithErrorHandler.class);
+        this.logger = logger;
     }
 
     @Override
@@ -32,7 +36,7 @@ public class TransactionCreatorImplWithErrorHandler implements TransactionCreato
         try {
             return transactionCreator.create(transactionModel);
         } catch (Exception ex) {
-            logger.error("An error has occurred while creating transaction");
+            logger.error("An error has occurred while creating transaction", ex);
             throw ex;
         }
     }

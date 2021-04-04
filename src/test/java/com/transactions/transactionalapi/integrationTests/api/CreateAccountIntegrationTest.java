@@ -39,7 +39,7 @@ class CreateAccountIntegrationTest {
 
     @Test
     void shouldCreateNewAccount() throws Exception {
-        var createAccountModel = new CreateAccountModel("57920370000164");
+        var createAccountModel = new CreateAccountModel("04250497011");
         final UUID[] accountId = new UUID[1];
 
         mockMvc.perform(post("/accounts")

@@ -1,20 +1,16 @@
 package com.transactions.transactionalapi.unitTests.api.controllers;
 
 import com.transactions.transactionalapi.api.controllers.AccountController;
-import com.transactions.transactionalapi.api.controllers.TransactionController;
 import com.transactions.transactionalapi.application.models.CommandResult;
 import com.transactions.transactionalapi.application.models.CreateAccountModel;
 import com.transactions.transactionalapi.application.models.CreatedAccountModel;
 import com.transactions.transactionalapi.application.services.accountCreators.AccountCreator;
 import com.transactions.transactionalapi.domain.entities.Account;
 import com.transactions.transactionalapi.domain.repositories.AccountReader;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.util.UriBuilder;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.time.LocalDateTime;

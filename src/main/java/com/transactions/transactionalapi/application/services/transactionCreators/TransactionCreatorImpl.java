@@ -10,8 +10,6 @@ import com.transactions.transactionalapi.domain.services.TransactionOperationAmo
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-
 @Service
 @Qualifier("transactionCreatorBase")
 public class TransactionCreatorImpl implements TransactionCreator {

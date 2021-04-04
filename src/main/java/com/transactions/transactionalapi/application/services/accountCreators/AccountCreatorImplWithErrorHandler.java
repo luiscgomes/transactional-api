@@ -4,7 +4,6 @@ import com.transactions.transactionalapi.application.models.CommandResult;
 import com.transactions.transactionalapi.application.models.CreateAccountModel;
 import com.transactions.transactionalapi.application.models.CreatedAccountModel;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -18,12 +17,16 @@ public class AccountCreatorImplWithErrorHandler implements AccountCreator {
     private final Logger logger;
 
     public AccountCreatorImplWithErrorHandler(
-            @Qualifier("accountCreateWithDocumentNumberAlreadyExits") AccountCreator accountCreator) {
+            @Qualifier("accountCreateWithDocumentNumberAlreadyExits") AccountCreator accountCreator, Logger logger) {
         if (accountCreator == null)
             throw new IllegalArgumentException("accountCreator must not be null");
 
+        if (logger == null)
+            throw new IllegalArgumentException("logger must not be null");
+
+
+        this.logger = logger;
         this.accountCreator = accountCreator;
-        logger = LoggerFactory.getLogger(AccountCreatorImplWithErrorHandler.class);
     }
 
     @Override
@@ -31,7 +34,7 @@ public class AccountCreatorImplWithErrorHandler implements AccountCreator {
         try {
             return accountCreator.create(account);
         } catch (Exception ex) {
-            logger.error("An error has occurred while creating account");
+            logger.error("An error has occurred while creating account", ex);
             throw ex;
         }
     }

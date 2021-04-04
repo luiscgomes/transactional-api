@@ -9,7 +9,8 @@ import org.springframework.context.annotation.ComponentScan;
 		"com.transactions.transactionalapi.domain",
 		"com.transactions.transactionalapi.infrastructure",
 		"com.transactions.transactionalapi.application",
-		"com.transactions.transactionalapi.api"
+		"com.transactions.transactionalapi.api",
+		"com.transactions.transactionalapi.config"
 })
 public class TransactionalApiApplication {
 
