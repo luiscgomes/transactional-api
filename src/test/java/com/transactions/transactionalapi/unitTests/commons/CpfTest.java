@@ -32,7 +32,7 @@ public class CpfTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = { "30716558000", " ", "123" })
+    @ValueSource(strings = { "3071655800", " ", "123" })
     void isCpfLength_shouldReturnFalseWhenCpfLength(String cpf) {
         var actual = Cpf.isCpfLength(cpf);
 
