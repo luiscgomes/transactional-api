@@ -1,4 +1,4 @@
-package com.transactions.transactionalapi.unitTests.application.domain.entities;
+package com.transactions.transactionalapi.unitTests.domain.entities;
 
 import com.transactions.transactionalapi.domain.entities.Account;
 import org.junit.jupiter.api.Test;

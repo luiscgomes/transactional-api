@@ -1,6 +1,5 @@
-package com.transactions.transactionalapi.unitTests.application.domain.valueObjects;
+package com.transactions.transactionalapi.unitTests.domain.valueObjects;
 
-import com.transactions.transactionalapi.domain.entities.Account;
 import com.transactions.transactionalapi.domain.valueObjects.DocumentNumber;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;

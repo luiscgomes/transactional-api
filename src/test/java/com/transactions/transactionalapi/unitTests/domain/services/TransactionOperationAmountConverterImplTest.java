@@ -1,4 +1,4 @@
-package com.transactions.transactionalapi.unitTests.application.domain.services;
+package com.transactions.transactionalapi.unitTests.domain.services;
 
 import com.transactions.transactionalapi.domain.enums.OperationTypes;
 import com.transactions.transactionalapi.domain.services.TransactionOperationAmountConverterImpl;
