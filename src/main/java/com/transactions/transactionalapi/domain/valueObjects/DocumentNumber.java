@@ -1,4 +1,4 @@
-package com.transactions.transactionalapi.domain.valueobjects;
+package com.transactions.transactionalapi.domain.valueObjects;
 
 import com.transactions.transactionalapi.commons.Cnpj;
 import com.transactions.transactionalapi.commons.Cpf;

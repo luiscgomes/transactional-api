@@ -71,7 +71,7 @@ public class Transaction {
     }
 
     public static List<OperationTypes> operationsWithNegativeAmount() {
-        return new ArrayList<OperationTypes>() {{
+        return new ArrayList<>() {{
             add(OperationTypes.CashPurchase);
             add(OperationTypes.InstallmentPurchase);
             add(OperationTypes.Withdrawal);

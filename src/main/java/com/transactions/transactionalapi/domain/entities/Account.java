@@ -1,6 +1,6 @@
 package com.transactions.transactionalapi.domain.entities;
 
-import com.transactions.transactionalapi.domain.valueobjects.DocumentNumber;
+import com.transactions.transactionalapi.domain.valueObjects.DocumentNumber;
 import lombok.Getter;
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -16,7 +16,7 @@ public class Account {
     private LocalDateTime createdAt;
 
     public Account(String documentNumber) {
-        if (documentNumber == null || documentNumber.isEmpty())
+        if (documentNumber == null || documentNumber.isBlank())
             throw new IllegalArgumentException("documentNumber must not be null or empty");
 
         this.id = UUID.randomUUID();
