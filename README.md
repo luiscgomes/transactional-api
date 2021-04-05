@@ -41,7 +41,7 @@ docker-compose up
 
 You should be able to make requests to http:localhost:8000 against the Transactional API.
 
-## Run Transactional API
+## Run Transactional API without container
 
 We can run the application without the Docker container (that is, in the host OS). In this project I am using Maven as dependencies manager.
 Before you run Transactional API locally, you need to spin up the Postgres through the command below on the root folder:
