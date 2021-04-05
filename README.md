@@ -36,7 +36,6 @@ In this project I decided to go with a SQL Database because our data is structur
 This project contains a docker-compose file. Thus, you just need to execute the commands below to run the Transactional API.
 
 ```bash
-docker-compose build
 docker-compose up
 ```
 
