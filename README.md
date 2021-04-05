@@ -36,13 +36,12 @@ In this project I decided to go with a SQL Database because our data is structur
 This project contains a docker-compose file. Thus, you just need to execute the commands below to run the Transactional API.
 
 ```bash
-docker-compose build
 docker-compose up
 ```
 
-You should be able to make requests to http:localhost:8000 against the Transactional API.
+You should be able to make requests to http://localhost:8080 against the Transactional API.
 
-## Run Transactional API
+## Run Transactional API without container
 
 We can run the application without the Docker container (that is, in the host OS). In this project I am using Maven as dependencies manager.
 Before you run Transactional API locally, you need to spin up the Postgres through the command below on the root folder:
@@ -55,6 +54,8 @@ Following, type the following:
 ```
 ./mvnw package && java -jar target/transactional-api-0.0.1-SNAPSHOT.jar
 ```
+
+Then go to http://localhost:8080
 
 ## Run All Tests
 It is very easy to run all test methods in a project with mvn test command. Run the mvn test command:
