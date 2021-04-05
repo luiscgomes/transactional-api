@@ -39,7 +39,7 @@ This project contains a docker-compose file. Thus, you just need to execute the 
 docker-compose up
 ```
 
-You should be able to make requests to (http://localhost:8000)[http://localhost:8000] against the Transactional API.
+You should be able to make requests to http://localhost:8000 against the Transactional API.
 
 ## Run Transactional API without container
 
@@ -55,7 +55,7 @@ Following, type the following:
 ./mvnw package && java -jar target/transactional-api-0.0.1-SNAPSHOT.jar
 ```
 
-Then go to (http://localhost:8000)[http://localhost:8000]
+Then go to http://localhost:8000
 
 ## Run All Tests
 It is very easy to run all test methods in a project with mvn test command. Run the mvn test command:
