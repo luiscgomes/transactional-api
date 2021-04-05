@@ -30,12 +30,13 @@ In accordance with Persistence and Infrastructure Ignorance principles, the infr
 To wrap your flows with a web layer, you must turn to Spring MVC. Thanks to Spring Boot, there is little in infrastructure to code. In this layer there are our controllers which contain our endpoints.
 
 ## Postgres as database
-In this project I decided to go with a SQL Database because our data is structured and organized, so it is very efficient to query this data with a SQL database. Postgres was used as database for this project. Postgresxw is an advanced open-source object-relational system which applies SQL language. Postgres allows you to store large and sophisticated data safely. It helps developers to build the most complex applications, run administrative tasks and create integral environments.
+In this project I decided to go with a SQL Database because our data is structured and organized, so it is very efficient to query this data with a SQL database. Postgres was used as database for this project. Postgres is an advanced open-source object-relational system which applies SQL language. Postgres allows you to store large and sophisticated data safely. It helps developers to build the most complex applications, run administrative tasks and create integral environments.
 
 ## Run Transactional API with docker
-This project contains a docker-compose file. Thus, you just need to execute the command below to run the Transactional API.
+This project contains a docker-compose file. Thus, you just need to execute the commands below to run the Transactional API.
 
 ```bash
+docker-compose build
 docker-compose up
 ```
 
@@ -43,7 +44,7 @@ You should be able to make requests to http:localhost:8000 against the Transacti
 
 ## Run Transactional API
 
-We can run the application without the Docker container (that is, in the host OS). In this project I am using Maven as manager dependencies.
+We can run the application without the Docker container (that is, in the host OS). In this project I am using Maven as dependencies manager.
 Before you run Transactional API locally, you need to spin up the Postgres through the command below on the root folder:
 
 ```
@@ -128,4 +129,5 @@ body:
 ### This project also contains a documentation using Swagger available on:
 ```
 localhost:8080/swagger-ui.html
+localhost:8080/v3/api-docs
 ```

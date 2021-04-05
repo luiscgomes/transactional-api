@@ -7,7 +7,8 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE TABLE Accounts (
     Account_Id uuid primary key DEFAULT uuid_generate_v4(),
     Created_At timestamp not null,
-    Document_Number varchar(14) not null
+    Document_Number varchar(14) not null,
+    UNIQUE(Document_Number)
 );
 
 CREATE TABLE OperationTypes (
