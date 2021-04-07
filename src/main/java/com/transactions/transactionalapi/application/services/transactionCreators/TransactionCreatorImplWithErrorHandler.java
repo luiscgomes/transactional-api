@@ -19,7 +19,7 @@ public class TransactionCreatorImplWithErrorHandler implements TransactionCreato
     private final Logger logger;
 
     public TransactionCreatorImplWithErrorHandler(
-            @Qualifier("transactionCreatorImplWithAccountExistsValidation") TransactionCreator transactionCreator,
+            @Qualifier("transactionCreatorWithLimitCheck") TransactionCreator transactionCreator,
             Logger logger) {
         if (transactionCreator == null)
             throw new IllegalArgumentException("transactionCreator must not be null");

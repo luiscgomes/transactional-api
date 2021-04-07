@@ -5,6 +5,8 @@ import com.transactions.transactionalapi.domain.repositories.TransactionWriter;
 import com.transactions.transactionalapi.infrastructure.dtos.TransactionDto;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
+
 @Repository
 public class TransactionWriterImpl implements TransactionWriter {
     private final TransactionJpaRepository transactionJpaRepository;
